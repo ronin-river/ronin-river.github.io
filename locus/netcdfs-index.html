@@ -2,7 +2,7 @@
     <head><title>Index of Cluster Weights</title></head>
     <body>
 	<p>
-	    <a href="https://www.usgs.gov/national-hydrography/watershed-boundary-dataset">HUC stands for Hydrologic Unit Code</a>. You can goto our <a href="/map.html#HUC">interactive map</a> to see the HUC borders and find out the corresponding code at the location of interest.
+	    <a href="https://www.usgs.gov/national-hydrography/watershed-boundary-dataset">HUC stands for Hydrologic Unit Code</a>. You can goto our <a href="/locus/map.html#HUC">interactive map</a> to see the HUC borders and find out the corresponding code at the location of interest.
 
 	    You can also search  online for how to find HUC for your streams of interest, <a href="https://www.usgs.gov/faqs/how-can-i-find-huc-hydrologic-unit-code-stream-how-can-i-find-namelocation-stream-using-huc"> example link </a>.
 	</p>
@@ -43,7 +43,7 @@
 	<script type="text/javascript" class="init">	 
 	 $(document).ready( function () {
 	     $('#tab-netcdfs').DataTable({
-		 "ajax": '/netcdfs-index.json',
+		 "ajax": '/locus/netcdfs-index.json',
 		 columns: [
 		     {data: 'thumbnail'}, /* linked to /download/thumbnail */
 		     {data: 'filename'}, /* linked to /download/filename */
@@ -56,15 +56,15 @@
 		 ],
 		 columnDefs: [
 		     {
-			 render: (data, type, row) => '<img src="/thumbnails/' + data + '\" height="60">',
+			 render: (data, type, row) => '<img src="/locus/thumbnails/' + data + '\" height="60">',
 			 targets: 0
 		     },
 		     {
-			 render: (data, type, row) => '<a href="/download/' + data + '\">' + data + '</a>',
+			 render: (data, type, row) => '<a href="/locus/download/' + data + '\">' + data + '</a>',
 			 targets: 1
 		     },
 		     {
-			 render: (data, type, row) => '<a href="/map.html?huc=' + row.huc + '&file=' + row.thumbnail +'\" target=\"_blank\">' + data + '</a>',
+			 render: (data, type, row) => '<a href="/locus/map.html?huc=' + row.huc + '&file=' + row.thumbnail +'\" target=\"_blank\">' + data + '</a>',
 			 targets: 2
 		     },
 		 ]

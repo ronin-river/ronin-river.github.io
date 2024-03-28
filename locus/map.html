@@ -158,7 +158,7 @@
  var curr_huc = params.huc
  var curr_file = params.file
  
- fetch("/netcdfs-index.json").then(res => res.json()).then(json => {
+ fetch("/locus/netcdfs-index.json").then(res => res.json()).then(json => {
      tabledata = json.data;
      var hucs = [];
      for (var i=0; i < json.recordsTotal; i++) {
@@ -187,7 +187,7 @@
      for (var i=0; i < tabledata.length; i++) {
 	 if (tabledata[i].huc == curr_huc && !(tabledata[i].thumbnail in layers)){
 	     var clus_lyr = L.imageOverlay(
-		 "/thumbnails/" + tabledata[i].thumbnail,
+		 "/locus/thumbnails/" + tabledata[i].thumbnail,
 		 tabledata[i].bounds,
 		 {"opacity": 1.0, "zindex": 1}
 	     );
