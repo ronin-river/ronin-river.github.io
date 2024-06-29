@@ -54,6 +54,8 @@
                  box-shadow: 0 0 5px #bbb;
                  padding: 0 5px;
                  margin: 0;
+		 width: 300px;
+		 max-width: 30%;
                  color: #333;
                  font: 11px/1.5 "Helvetica Neue",Arial,Helvetica,sans-serif;
              }
@@ -90,7 +92,7 @@
     <div class="folium-map" id="main-map" ></div>
     <div id="colorbar" class="legend">
 	<h4><center>Legend</center></h4>
-	<img src="/locus/precip-colors.svg" width="300px">
+	<img src="/locus/precip-colors.svg" width="100%">
     </div>
 </body>
 <script>
@@ -165,7 +167,6 @@
      layer_control_34284a3afe2b3c995dc1cf9069cab414_layers.overlays,
      {"autoZIndex": true, "collapsed": false, "position": "topright"}
  ).addTo(main_map);
-
 
  var tabledata;
  var select = document.getElementById('sel-huc');
